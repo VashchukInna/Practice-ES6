@@ -1,14 +1,14 @@
 //ES5
 /*var name5 = 'Jane Smith';
-var age5 = 23;
-name5 = 'Jane Miller';
-console.log(name5);
+ var age5 = 23;
+ name5 = 'Jane Miller';
+ console.log(name5);
 
-//ES6
-const name6 = 'Jane Smith';
-let age6 = 23;
-name6 = 'Jane Miller';
-console.log(name6);*/
+ //ES6
+ const name6 = 'Jane Smith';
+ let age6 = 23;
+ name6 = 'Jane Miller';
+ console.log(name6);*/
 
 //ES5
 function driverLicense5(passedTest) {
@@ -32,3 +32,18 @@ function driverLicense6(passedTest) {
 }
 
 driverLicense6(true);
+
+//Block and IIFEs
+//ES6
+{
+    const a = 1;
+    let b = 2;
+}
+console.log(a + b);
+
+//ES5
+(function () {
+    var c = 3;
+})();
+
+console.log(c);
