@@ -39,14 +39,14 @@ driverLicense6(true);
     const a = 1;
     let b = 2;
 }
-console.log(a + b);
+//console.log(a + b);
 
 //ES5
 (function () {
     var c = 3;
 })();
 
-console.log(c);
+//console.log(c);
 
 //ES6: strings
 let firstName = 'John';
@@ -73,3 +73,26 @@ console.log(n.endsWith('Sm'));
 console.log(n.includes('oh'));
 console.log(`${firstName}
 `.repeat(5));
+
+//Arrow functions
+const years = [1990, 1996];
+
+//ES5
+var age5 = years.map(function (el) {
+    return 2018 - el;
+});
+console.log(age5);
+
+//ES6
+let ages6 = years.map(el => 2018 - el);
+console.log(ages6);
+
+ages6 = years.map((el, index) => `Age element ${index + 1}: ${2018 - el}.`);
+console.log(ages6);
+
+ages6 = years.map((el, index) => {
+    const now = new Date().getFullYear();
+    const age = now - el;
+    return `Age element ${index + 1}: ${age}.`
+});
+console.log(ages6);
