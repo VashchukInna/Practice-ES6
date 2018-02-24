@@ -534,7 +534,6 @@ const allParks = [new Park('Green Park', 1987, 0.2, 215), new Park('National Par
 const allStreets = [new Street('Ocean Avenue', 1999, 1.1, 4), new Street('Evergreen Street', 2008, 2, 7, 2),
     new Street('Sunset Boulevard', 1982, 2.5, 5)];
 
-
 function calc(arr) {
     const sum = arr.reduce((prev, cur, index) => prev + cur, 0);
 
@@ -553,11 +552,20 @@ function reportParks(p) {
     console.log(`Our ${p.length} parks have an average of ${avgAge} years.`);
 
     //Which park has more than 1000 trees
+    const i = p.map(el => el.numTrees).findIndex(el >= 1000);
+    console.log(`${p[i].name} has more than 1000 trees.`);
 }
 
 function reportStreets(s) {
+    console.log('-----STREETS REPORT------');
 
+    //Total and average length of the town's streets
+    const [totalLength, avgLength] = calc(s.map(el => el.length));
+    console.log(`Our ${s.length} streets have a total length of ${totalLength} km, with an average of ${avgLength} km`);
+
+    //Classify sizes
+    s.forEach(el => el.classifyStreet());
 }
 
 reportParks(allParks);
-
+reportParks(allStreets);
